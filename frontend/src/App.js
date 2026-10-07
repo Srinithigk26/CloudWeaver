@@ -12,7 +12,15 @@ const initialForm = { name: "E-Commerce Backend API", vcpu: 8, ram: 32, storage:
 
 function formatApiError(error) { const detail = error?.response?.data?.detail; if (typeof detail === "string") return detail; if (Array.isArray(detail)) return detail.map(x => x.msg).join(" "); return "Something went wrong. Please try again."; }
 
-function Logo({ name }) { return <div className={`provider-logo ${providers[name].icon}`} data-testid={`${name.toLowerCase()}-provider-logo`}>{name === "AWS" ? "aws" : name === "Azure" ? "▰" : "G"}</div>; }
+function Logo({ name }) {
+  const logos = {
+    AWS: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg",
+    Azure: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg",
+    GCP: "https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg",
+  };
+  const labels = { AWS: "Amazon Web Services logo", Azure: "Microsoft Azure logo", GCP: "Google Cloud Platform logo" };
+  return <div className={`provider-logo ${providers[name].icon}`} data-testid={`${name.toLowerCase()}-provider-logo`}><img src={logos[name]} alt={labels[name]} /></div>;
+}
 
 function AuthPage({ onAuth }) {
   const [register, setRegister] = useState(false); const [form, setForm] = useState({ name: "", email: "", password: "", region: "India" }); const [error, setError] = useState(""); const [busy, setBusy] = useState(false);
