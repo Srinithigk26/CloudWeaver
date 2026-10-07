@@ -103,3 +103,55 @@ nav button.active{box-shadow:inset 3px 0 0 #a7f3d0}
 /* Stack analytics vertically: chart ABOVE insight for clarity */
 .analytics-row{grid-template-columns:1fr !important;gap:16px}
 .chart-panel .chart-wrap{height:260px}
+
+/* ============================================================
+   MIGRATION PLANNER — interactive, responsive
+   ============================================================ */
+.planner-hero{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.planner-hero-text{flex:1;min-width:260px}
+.planner-controls{display:flex;align-items:flex-end;gap:14px;background:#fff;border:1px solid #d8e9f8;border-radius:12px;padding:14px 16px;box-shadow:0 8px 24px rgba(31,67,100,.07)}
+.planner-controls label{display:flex;flex-direction:column;gap:7px;font-family:var(--display);font-size:10.5px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;color:#1259a5}
+.planner-controls select{border:1.5px solid #cfe1f5;background:#f8fbff;border-radius:8px;padding:10px 12px;font-weight:600;font-size:13px;color:#0b1f3a;min-width:120px;outline:0;transition:border-color .2s,box-shadow .2s}
+.planner-controls select:focus{border-color:#1e88e5;box-shadow:0 0 0 4px rgba(30,136,229,.14);background:#fff}
+.planner-arrow-mark{color:#2e7d32;margin-bottom:12px}
+
+.planner-progress{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 20px;box-shadow:0 6px 20px rgba(31,67,100,.05)}
+.progress-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.progress-head b{font-family:var(--display);font-weight:700;font-size:13px}
+.progress-head span{font-size:11px;color:#64748b;font-weight:600}
+.progress-bar{height:8px;background:#eef2f7;border-radius:999px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,#1e88e5 0%,#2e7d32 100%);border-radius:999px;transition:width .4s ease}
+
+/* Clickable workflow step buttons */
+.workflow-step{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:22px 20px;min-height:200px;display:flex;flex-direction:column;align-items:flex-start;text-align:left;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s,background-color .2s;font-family:inherit}
+.workflow-step:hover{transform:translateY(-2px);border-color:#9ec4ec;box-shadow:0 12px 26px rgba(31,67,100,.09)}
+.workflow-step.active{border-color:#2e7d32;background:linear-gradient(165deg,#e8f5e9 0%,#f3fbf4 100%);box-shadow:0 14px 30px rgba(46,125,50,.13)}
+.workflow-step.active>svg{color:#1b5e20}
+.workflow-step.complete .step-chip{background:#2e7d32;color:#fff}
+.workflow-step .step-chip{position:absolute;top:16px;right:16px;font-family:var(--display);font-size:10px;font-weight:700;letter-spacing:.4px;background:#eef5fb;color:#1259a5;padding:4px 8px;border-radius:999px}
+.workflow-step p{color:#5d7489;font-size:11.5px;line-height:1.55;margin:0}
+
+/* Planner detail panel */
+.planner-detail{margin-top:18px;padding:24px 26px}
+.planner-detail-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:20px}
+.planner-detail-head h2{font-family:var(--display);font-size:22px;font-weight:800;letter-spacing:-.5px;margin:8px 0 6px;color:#0b1f3a}
+.planner-detail-head .muted{margin-top:0;color:#5d7489;font-size:13px}
+.planner-nav{display:flex;gap:10px;flex-wrap:wrap}
+.planner-nav button{border:1.5px solid var(--line);background:#fff;color:#334e68;border-radius:9px;padding:10px 14px;font-family:var(--display);font-weight:700;font-size:12px;display:inline-flex;align-items:center;gap:7px;transition:background-color .2s,border-color .2s,color .2s}
+.planner-nav button:hover:not(:disabled){border-color:#1e88e5;color:#1259a5}
+.planner-nav button:disabled{opacity:.4;cursor:not-allowed}
+.planner-nav .planner-next{background:linear-gradient(135deg,#2e7d32 0%,#1b5e20 100%);color:#fff;border-color:transparent}
+.planner-nav .planner-next:hover:not(:disabled){background:linear-gradient(135deg,#1b5e20 0%,#14401a 100%);color:#fff}
+
+.planner-tasks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.planner-tasks li{background:#f8fbff;border:1.5px solid #e4ecf5;border-radius:10px;transition:background-color .2s,border-color .2s}
+.planner-tasks li:hover{border-color:#9ec4ec}
+.planner-tasks li.done{background:#eefaef;border-color:#bde2c1}
+.planner-tasks li.done span{text-decoration:line-through;color:#5d8464}
+.planner-tasks label{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;cursor:pointer;font-size:13px;color:#0b1f3a;font-weight:500;line-height:1.5}
+.planner-tasks input[type=checkbox]{appearance:none;-webkit-appearance:none;width:19px;height:19px;border:2px solid #c2d2e2;border-radius:5px;flex-shrink:0;margin-top:1px;background:#fff;cursor:pointer;position:relative;transition:background-color .2s,border-color .2s}
+.planner-tasks input[type=checkbox]:checked{background:#2e7d32;border-color:#2e7d32}
+.planner-tasks input[type=checkbox]:checked:after{content:"";position:absolute;left:4px;top:0;width:7px;height:12px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+
+@media(max-width:900px){.workflow{grid-template-columns:1fr 1fr;gap:12px}.workflow-arrow{display:none}.planner-hero{padding:24px 22px}.planner-controls{width:100%;justify-content:center}.planner-controls select{min-width:0;flex:1}.planner-detail{padding:20px}.planner-detail-head{flex-direction:column;align-items:stretch}.planner-nav{justify-content:space-between}.planner-nav button{flex:1;justify-content:center}}
+@media(max-width:480px){.workflow{grid-template-columns:1fr}.planner-controls{flex-wrap:wrap}.planner-arrow-mark{display:none}}
