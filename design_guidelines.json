@@ -1,0 +1,58 @@
+{
+  "typography": {
+    "headings": "System UI, Inter, sans-serif",
+    "body": "System UI, Inter, sans-serif",
+    "weights": {
+      "light": "font-light",
+      "normal": "font-normal",
+      "medium": "font-medium",
+      "semibold": "font-semibold",
+      "bold": "font-bold"
+    }
+  },
+  "colors": {
+    "main_background": "#FFFFFF",
+    "sidebar_background": "#1E88E5",
+    "sidebar_active": "#1565C0",
+    "primary_cta": "#2E7D32",
+    "primary_cta_hover": "#1B5E20",
+    "recommendation_bg": "#E8F5E9",
+    "recommendation_border": "#2E7D32"
+  },
+  "visual_enhancers": {
+    "shadows": "shadow-sm md:shadow-md",
+    "border_radius": "rounded-xl",
+    "backdrop_filter": "backdrop-blur-md bg-white/80"
+  },
+  "component_name": "CloudWeaver Multi-Cloud Cost Optimization & Workload Migration System",
+  "grids": {
+    "dashboard_grid": "grid grid-cols-1 md:grid-cols-4 gap-6",
+    "comparison_grid": "grid grid-cols-1 md:grid-cols-3 gap-8"
+  },
+  "layouts": {
+    "sidebar_layout": "flex h-screen overflow-hidden",
+    "main_content": "flex-1 overflow-y-auto bg-gray-50 p-6 md:p-10"
+  },
+  "motion": {
+    "transitions": "transition-all duration-200 ease-in-out",
+    "hover_lift": "hover:-translate-y-1"
+  },
+  "accessibility": {
+    "contrast_target": "WCAG AA",
+    "focus_states": "focus:ring-2 focus:ring-blue-500 focus:outline-none"
+  },
+  "media": {
+    "responsive": true
+  },
+  "3d_libraries": {
+    "enabled": false
+  },
+  "image_urls": [],
+  "instructions_to_main_agent": "Build a production-ready React frontend with Tailwind CSS and Shadcn UI. Implement JWT email/password + Google login-ready auth flow, guarded dashboard with collapsible sidebar, dynamic multi-cloud cost engine with exact INR rates (AWS, Azure, GCP), workload history, migration planner workflow, interactive analytics charts with Recharts, and CloudWeaver AI Assistant drawer. Ensure all buttons, forms, and tabs include data-testid attributes.",
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "Never use universal transition: all",
+    "Ensure all interactive controls include data-testid attributes",
+    "Use generous spacing (p-6, p-8, gap-6)",
+    "Clean enterprise UI adhering to CloudWeaver design system"
+  ]
+}
