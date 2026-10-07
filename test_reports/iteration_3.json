@@ -1,0 +1,27 @@
+{
+  "summary": "Verified the fix for 'Cost by provider' chart overwriting 'Your workload favors efficient compute.' insight panel on Dashboard after Analyze. Logged in as admin, ran Analyze & optimize, then measured getBoundingClientRect for .chart-panel and .insight-panel at 4 viewports. In all cases: chart.bottom <= insight.top (16px gap), no horizontal clipping, 'MONTHLY ESTIMATE' chip does not overlap the 'Cost by provider' h2, chart renders 3 bars (AWS/Azure/GCP) + axis bars. .analytics-row now computes to single-column grid as intended.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [
+    "/app/test_reports/ui3/Desktop_1920.jpg",
+    "/app/test_reports/ui3/Laptop_1366.jpg",
+    "/app/test_reports/ui3/Tablet_1024.jpg",
+    "/app/test_reports/ui3/Mobile_390.jpg"
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "CSS fix uses !important on grid-template-columns in .analytics-row to force single-column stack; works but consider removing the original 2-column rule instead of overriding with !important for cleaner cascade."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (frontend-only test)", "frontend": "100%"},
+  "test_credentials": "admin@cloudweaver.app / CloudWeaver!2026 (from /app/memory/test_credentials.md)",
+  "seed_data_creation": "none",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Dashboard analytics-row layout fix verified. Measurements per viewport (chart.bottom -> insight.top): 1920x900: 638.6 -> 654.6 (gap 16px). 1366x800: 517.6 -> 533.6 (16px). 1024x800: 482.6 -> 498.6 (16px). 390x844: 536.9 -> 552.9 (16px). All stacked vertically, no overlap, no clipping. grid-template-columns resolves to single column at all widths.",
+  "rca of the issue": "RCA: Previously .analytics-row used a 2-column grid which, at mid-range widths (~1200-1400px), caused the chart panel's title area to overlap the adjacent insight panel because the chart panel padding + chip + title stacking exceeded column width. Fix: forced .analytics-row to grid-template-columns:1fr with 16px gap, stacking chart above insight. Verified via DOM bounding rect assertions."
+}
