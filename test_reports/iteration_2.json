@@ -1,0 +1,24 @@
+{
+  "summary": "Completed live CloudWeaver registration regression testing on desktop and mobile, plus backend auth/cost/history tests.",
+  "backend_issues": {
+    "critical": [],
+    "minor": [
+      {"endpoint": "/api/assistant/chat", "issue": "Backend logs show the assistant request fails because model gemini/gemini-3-flash is rejected as invalid; this flow was outside the requested registration fix."}
+    ]
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": ["/app/backend/tests/backend_test.py", "/app/test_reports/pytest/pytest_results_iteration2.xml"],
+  "action_items": ["Investigate the invalid model configuration for /api/assistant/chat if assistant functionality is in scope."],
+  "critical_code_review_comments": [],
+  "updated_files": ["/app/test_reports/iteration_2.json", "/app/test_reports/pytest/pytest_results_iteration2.xml"],
+  "success_rate": {"backend": "100% (2/2)", "frontend": "100% (critical auth flow)"},
+  "seed_data_creation": "Created one disposable uniquely named registration account during live UI testing.",
+  "retest_needed": false,
+  "should_call_test_agent_after_fix": false,
+  "context_for_next_testing_agent": "Registration name input, all registration fields, submit/dashboard transition, sign-in controls, Google feedback, and mobile layout were verified successfully.",
+  "rca of the issue": "The reported registration interaction issue is resolved in the tested build: explicit button types and vertically stacked auth form labels allow typing and submission. No clipping or overlap was observed at 390px width."
+}

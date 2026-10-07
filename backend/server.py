@@ -135,7 +135,7 @@ async def workloads(user=Depends(current_user)):
 async def assistant(data: ChatInput, user=Depends(current_user)):
     try:
         from emergentintegrations.llm.chat import LlmChat, UserMessage
-        chat = LlmChat(api_key=os.environ["EMERGENT_LLM_KEY"], session_id=str(user["_id"]), system_message="You are CloudWeaver AI, a concise cloud cost optimization expert. Answer in plain language with practical AWS, Azure, GCP and migration advice.").with_model("gemini", "gemini-3-flash")
+        chat = LlmChat(api_key=os.environ["EMERGENT_LLM_KEY"], session_id=str(user["_id"]), system_message="You are CloudWeaver AI, a concise cloud cost optimization expert. Answer in plain language with practical AWS, Azure, GCP and migration advice.").with_model("gemini", "gemini-2.5-flash")
         reply = await chat.send_message(UserMessage(text=data.message))
         return {"reply": reply}
     except Exception as exc:
