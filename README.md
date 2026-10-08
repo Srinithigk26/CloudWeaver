@@ -1,282 +1,304 @@
-# ☁️ CloudWeaver – Intelligent Multi-Cloud Workload Planner
+# ☁️ CloudWeaver — Intelligent Multi-Cloud Workload Planner
 
-**CloudWeaver** is an intelligent multi-cloud workload planning and cost optimization system designed to help users compare cloud platforms and identify a suitable deployment option for their workloads.
+**CloudWeaver** is a cloud computing application designed to help users plan, compare, and manage cloud workload deployments across major cloud platforms such as **AWS, Microsoft Azure, and Google Cloud Platform (GCP)**.
 
-The system provides a centralized dashboard where users can define workload requirements and analyze cloud options such as **Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP)** based on estimated cost, resource requirements, performance considerations, and workload suitability.
+The application provides a centralized dashboard for workload planning, multi-cloud comparison, cost-oriented decision support, migration planning, and workload history management.
+
+> **Plan workloads. Compare clouds. Simplify migration decisions.**
+
+---
+
+## 🌐 Live Application
+
+**Live Demo:**
+https://multi-cloud-planner.emergent.host
 
 ---
 
 ## 🎯 Project Objective
 
-Selecting a suitable cloud platform can be difficult because different cloud providers offer different services, pricing models, resource configurations, and performance characteristics.
+Selecting the right cloud environment for a workload can be challenging because cloud providers differ in their resource configurations, pricing models, services, and deployment approaches.
 
-CloudWeaver aims to simplify this decision-making process by providing a unified platform for:
+CloudWeaver aims to simplify this process by bringing workload planning and multi-cloud decision support into a single application.
+
+The project focuses on:
 
 * Workload requirement analysis
 * Multi-cloud comparison
-* Estimated cost analysis
-* Resource suitability evaluation
+* Cost-oriented planning
+* Resource suitability
 * Cloud migration planning
+* Migration readiness tracking
 * Workload history management
-* Cloud deployment decision support
+* Deployment decision support
 
 ---
 
 ## 💡 Problem Statement
 
-Organizations and developers often need to compare multiple cloud providers before deploying an application or workload.
+When planning a cloud deployment, users may need to manually evaluate different cloud providers and determine which option best fits their workload.
 
-The traditional approach requires users to:
-
-1. Identify their workload requirements.
-2. Visit individual cloud provider platforms.
-3. Check available resources and pricing.
-4. Compare the collected information manually.
-5. Decide which platform is most suitable.
-
-This process can be time-consuming and difficult for users who are unfamiliar with cloud infrastructure.
-
-**CloudWeaver addresses this problem by providing a centralized workload planning and multi-cloud comparison interface.**
-
----
-
-## 🚀 Proposed Solution
-
-CloudWeaver allows a user to enter workload requirements through an interactive dashboard.
-
-The system processes the requirements and provides a structured comparison of cloud deployment options.
-
-### Basic workflow
+A typical process involves:
 
 ```text
-User
-  ↓
-Enter Workload Requirements
-  ↓
-Workload Analysis
-  ↓
-Cloud Provider Comparison
-  ↓
-Cost & Resource Evaluation
-  ↓
-Suitability Analysis
-  ↓
-Recommendation
-  ↓
-Migration Planning
-  ↓
-Dashboard & History
+Define workload requirements
+          ↓
+Check cloud resources
+          ↓
+Compare cloud providers
+          ↓
+Evaluate cost and suitability
+          ↓
+Plan migration/deployment
+          ↓
+Make a cloud decision
 ```
 
----
+Performing these steps across multiple platforms can become time-consuming and difficult to manage.
 
-## ☁️ Supported Cloud Platforms
+### CloudWeaver's Approach
 
-CloudWeaver is designed around the three major cloud platforms:
-
-| Cloud Provider | Platform              |
-| -------------- | --------------------- |
-| 🟠 AWS         | Amazon Web Services   |
-| 🔵 Azure       | Microsoft Azure       |
-| 🟢 GCP         | Google Cloud Platform |
-
-The architecture is designed so that additional cloud providers can be incorporated in the future.
+CloudWeaver provides a centralized interface where workload planning, cloud comparison, and migration planning can be handled within one application.
 
 ---
 
-## 🧩 Key Features
+# 🚀 Key Features
 
-### 1. Workload Planning
+## 1. 📋 Workload Planning
 
-Users can define workload requirements such as:
+CloudWeaver provides an interface for defining workload requirements and organizing the information required for cloud deployment planning.
 
-* CPU / vCPU requirements
+Typical workload considerations include:
+
+* Compute requirements
 * Memory requirements
 * Storage requirements
-* Runtime duration
-* Network usage
-* Workload type
-* Performance requirements
-
----
-
-### 2. Multi-Cloud Comparison
-
-CloudWeaver provides a centralized comparison between different cloud providers rather than requiring users to evaluate each provider separately.
-
-The comparison can consider:
-
-* Estimated cost
-* Resource requirements
+* Runtime requirements
+* Network requirements
+* Workload characteristics
 * Performance considerations
-* Workload suitability
 
 ---
 
-### 3. Cost Estimation
+## 2. ☁️ Multi-Cloud Planning
 
-The system is designed to estimate the expected cost of deploying a workload based on its resource requirements and usage parameters.
+The application is designed around three major cloud providers:
 
-Conceptually:
+| Provider | Platform              |
+| -------- | --------------------- |
+| 🟠 AWS   | Amazon Web Services   |
+| 🔵 Azure | Microsoft Azure       |
+| 🟢 GCP   | Google Cloud Platform |
+
+This allows the project to demonstrate the concept of evaluating a workload in a multi-cloud environment rather than designing the application around only one provider.
+
+---
+
+## 3. 💰 Cost-Oriented Analysis
+
+CloudWeaver incorporates cost considerations into workload planning.
+
+The planned cost-analysis model considers factors such as:
 
 ```text
-Estimated Cost
-      =
-Compute Cost
-+ Storage Cost
-+ Network Cost
-+ Runtime / Usage Cost
-+ Other Applicable Resources
+Compute
+   +
+Storage
+   +
+Network Usage
+   +
+Runtime / Resource Usage
+   ↓
+Estimated Deployment Cost
 ```
 
-> **Note:** Cost values are intended as estimates and depend on the pricing data and assumptions used by the application. They should not be treated as official cloud-provider billing quotes.
+The cost values should be treated as **planning estimates**, not official cloud-provider billing quotations.
 
 ---
 
-### 4. Intelligent Recommendation
+## 4. 🧠 Cloud Decision Support
 
-After analyzing the workload requirements, CloudWeaver can identify a suitable cloud option based on the configured comparison criteria.
+CloudWeaver is designed to help users understand which cloud option may be more suitable for a particular workload.
 
-The recommendation process considers factors such as:
+The decision-support concept combines:
 
 ```text
-Cost
-+
-Resource Suitability
-+
-Performance
-+
 Workload Requirements
+        +
+Resource Suitability
+        +
+Cost Considerations
+        +
+Performance Requirements
         ↓
-Cloud Recommendation
+Cloud Deployment Decision
 ```
+
+The system is intended as a decision-support prototype rather than a replacement for official cloud-provider pricing calculators.
 
 ---
 
-### 5. Cloud Migration Planner
+# 🔄 Cloud Migration Planner
 
-CloudWeaver includes a structured migration planning workflow for moving a workload between cloud environments.
+One of the major features of CloudWeaver is its **four-stage migration planner**.
 
-The migration planner is organized into four stages:
+The migration workflow is organized as:
 
 ```text
 Stage 01 → Audit
+      ↓
 Stage 02 → Docker
+      ↓
 Stage 03 → Deploy
+      ↓
 Stage 04 → DNS Cutover
 ```
 
-Each stage contains tasks and a readiness tracker to help users follow the migration process.
+Each stage contains a set of migration tasks and a readiness tracker.
+
+### Stage 01 — Audit
+
+Review the existing workload and identify the resources, dependencies, and requirements that need to be considered before migration.
+
+### Stage 02 — Docker
+
+Prepare the application for containerized deployment and identify the components required for migration.
+
+### Stage 03 — Deploy
+
+Plan the deployment of the workload in the target cloud environment.
+
+### Stage 04 — DNS Cutover
+
+Plan the final transition of traffic to the migrated deployment.
 
 ---
 
-### 6. Migration Result
+# ✅ Migration Readiness
 
-After completing the migration checklist, the system provides a migration summary containing:
+The migration planner provides a checklist-based approach to tracking migration progress.
 
-* Completed tasks
+Completed tasks remain clearly visible, and the application provides a migration result summary when the workflow reaches the final stage or the required tasks are completed.
+
+The result area can provide:
+
+* Completed task summary
 * Migration readiness status
 * Cutover readiness
 * Migration summary
 * Next-step guidance
-
-A reset option allows the user to start a new migration planning workflow.
+* Reset option for a new migration plan
 
 ---
 
-### 7. Workload History
+# 🗂️ Workload History
 
-CloudWeaver maintains workload history so users can review previous planning activities.
+CloudWeaver provides workload history management so previous workload-planning records can be reviewed.
 
 The history interface supports:
 
-* Viewing previous workloads
-* Renaming workload records
-* Deleting workload records
-* Managing saved workload information
+* Viewing workload records
+* Renaming records
+* Saving renamed records
+* Cancelling rename operations
+* Deleting records
+* Reviewing previously created workload information
+
+This allows the application to function as a planning workspace rather than a one-time calculator.
 
 ---
 
-### 8. Interactive Dashboard
+# 🏗️ System Architecture
 
-The application provides a responsive dashboard designed to present cloud planning information in an easy-to-understand format.
-
-The dashboard can be used to visualize:
-
-* Workload information
-* Cloud comparison
-* Cost information
-* Migration progress
-* Recommendation results
-* Workload history
-
----
-
-## 🏗️ System Architecture
-
-The overall architecture follows a frontend-backend-cloud approach.
+The application follows a frontend-backend architecture with cloud-planning and migration components.
 
 ```text
-                    ┌─────────────────┐
-                    │      USER       │
-                    └────────┬────────┘
-                             │
-                             ↓
-                    ┌─────────────────┐
-                    │   CloudWeaver   │
-                    │    Dashboard    │
-                    └────────┬────────┘
-                             │
-                             ↓
-                    ┌─────────────────┐
-                    │ Backend / APIs  │
-                    └────────┬────────┘
-                             │
-             ┌───────────────┼───────────────┐
-             ↓               ↓               ↓
-      ┌────────────┐ ┌────────────┐ ┌────────────┐
-      │ Cost Engine│ │ Workload   │ │ Migration  │
-      │            │ │ Analyzer   │ │ Planner    │
-      └─────┬──────┘ └─────┬──────┘ └─────┬──────┘
-            │              │              │
-            └──────────────┼──────────────┘
-                           ↓
-                  ┌──────────────────┐
-                  │ Recommendation   │
-                  │     Engine       │
-                  └────────┬─────────┘
-                           ↓
-             ┌─────────────┼─────────────┐
-             ↓             ↓             ↓
-           AWS           Azure          GCP
-             │             │             │
-             └─────────────┼─────────────┘
-                           ↓
-                  ┌──────────────────┐
-                  │ Results / History│
-                  └──────────────────┘
+                    ┌────────────────────┐
+                    │        USER        │
+                    └─────────┬──────────┘
+                              │
+                              ↓
+                    ┌────────────────────┐
+                    │  CloudWeaver UI    │
+                    │     Dashboard      │
+                    └─────────┬──────────┘
+                              │
+                              ↓
+                    ┌────────────────────┐
+                    │   Backend / APIs   │
+                    └─────────┬──────────┘
+                              │
+             ┌────────────────┼────────────────┐
+             ↓                ↓                ↓
+      ┌──────────────┐ ┌──────────────┐ ┌──────────────┐
+      │   Workload   │ │    Cost /    │ │  Migration   │
+      │   Planning   │ │  Comparison  │ │   Planner    │
+      └──────┬───────┘ └──────┬───────┘ └──────┬───────┘
+             │                │                │
+             └────────────────┼────────────────┘
+                              ↓
+                    ┌────────────────────┐
+                    │ Decision Support & │
+                    │ Planning Results   │
+                    └─────────┬──────────┘
+                              │
+                  ┌───────────┼───────────┐
+                  ↓           ↓           ↓
+                AWS         Azure        GCP
+                             
+                              ↓
+                    ┌────────────────────┐
+                    │ Workload History   │
+                    └────────────────────┘
 ```
 
 ---
 
-## 🛠️ Technology Stack
+# 📂 Project Structure
 
-The exact technologies may vary depending on the implementation generated in the development environment.
+The current repository is organized into the following major components:
 
-### Frontend
+```text
+CloudWeaver/
+│
+├── backend/
+│   └── Backend application and API components
+│
+├── frontend/
+│   └── User interface and dashboard components
+│
+├── tests/
+│   └── Application test cases
+│
+├── test_reports/
+│   └── Test and verification reports
+│
+├── memory/
+│   └── Project-related application data/configuration
+│
+├── .emergent/
+│   └── Emergent project configuration
+│
+├── .gitignore
+├── README.md
+├── design_guidelines.json
+└── test_result.md
+```
 
-* HTML
-* CSS
-* JavaScript
-* React / frontend framework used by the application
+---
 
-### Backend
+# 🛠️ Technology & Development
 
-* REST API architecture
-* Backend services for workload processing
-* Cloud planning and recommendation logic
+### Application
 
-### Cloud
+* Frontend web application
+* Backend API architecture
+* Responsive dashboard interface
+* REST-style application communication
+* Workload planning logic
+* Migration planning workflow
+
+### Cloud Platforms Considered
 
 * Amazon Web Services (AWS)
 * Microsoft Azure
@@ -289,230 +311,204 @@ The exact technologies may vary depending on the implementation generated in the
 * GitHub
 * Emergent
 
-### Data & Storage
+### Testing
 
-* Application data storage
-* Workload history
-* Cloud resource and pricing information
+The repository includes dedicated testing and test-report components for verifying application functionality.
 
 ---
 
-## 📂 Project Structure
+# 🔁 Application Workflow
 
-The project structure may vary based on the generated application. The main application is organized around frontend, backend, and supporting configuration/data components.
-
-```text
-CloudWeaver/
-│
-├── app/
-│   ├── frontend/
-│   │   ├── src/
-│   │   ├── public/
-│   │   ├── package.json
-│   │   └── ...
-│   │
-│   ├── backend/
-│   │   └── ...
-│   │
-│   └── ...
-│
-├── README.md
-├── .gitignore
-└── ...
-```
-
-> The exact structure should be updated to match the final repository generated by the application.
-
----
-
-## 🔄 CloudWeaver Workflow
-
-A typical workload planning process is:
-
-### Step 1 – Define Workload
-
-The user enters the expected workload requirements.
-
-### Step 2 – Analyze Requirements
-
-The system identifies the required computing, memory, storage and network resources.
-
-### Step 3 – Compare Cloud Providers
-
-The workload is evaluated against available cloud options.
-
-### Step 4 – Estimate Cost
-
-The system calculates an estimated deployment cost using the configured pricing/resource data.
-
-### Step 5 – Evaluate Suitability
-
-Cloud options are evaluated according to the selected workload requirements and performance considerations.
-
-### Step 6 – Generate Recommendation
-
-The system presents the most suitable option based on the configured decision criteria.
-
-### Step 7 – Plan Migration
-
-If required, the user can follow the migration workflow through:
+The overall CloudWeaver workflow is:
 
 ```text
-Audit → Docker → Deploy → DNS Cutover
+        USER
+          │
+          ↓
+  Enter Workload Details
+          │
+          ↓
+   Workload Planning
+          │
+          ↓
+  Multi-Cloud Evaluation
+          │
+          ↓
+ Cost / Resource Comparison
+          │
+          ↓
+ Deployment Decision
+          │
+          ↓
+  Migration Planning
+          │
+          ↓
+ Audit → Docker → Deploy → DNS
+          │
+          ↓
+   Migration Readiness
+          │
+          ↓
+      History
 ```
 
 ---
 
-## 🌟 Project Novelty
+# 🌟 Project Novelty
 
-Cloud cost calculators and cloud comparison tools already exist.
+Cloud comparison and cloud cost calculators already exist.
 
-The focus of CloudWeaver is to combine multiple aspects of cloud decision-making into a single academic prototype:
+CloudWeaver's project focus is to combine several cloud-planning activities into a **single workload-oriented decision-support application**.
 
 ```text
-Workload Input
-      +
-Resource Analysis
-      +
+Workload Planning
+        +
 Multi-Cloud Comparison
-      +
-Cost Estimation
-      +
-Suitability Analysis
-      +
-Recommendation
-      +
+        +
+Cost Consideration
+        +
+Resource Suitability
+        +
 Migration Planning
-      +
-History
-      ↓
-Unified Cloud Planning Platform
+        +
+Readiness Tracking
+        +
+Workload History
+        ↓
+Unified Cloud Planning Workspace
 ```
 
-This makes CloudWeaver a **workload-oriented multi-cloud decision-support system** rather than only a basic cloud price calculator.
+Instead of treating cloud comparison and migration as completely separate activities, CloudWeaver connects them into one planning workflow.
 
 ---
 
-## 🎓 Academic Relevance
+# 🎓 Academic Relevance
 
-CloudWeaver demonstrates several important concepts from Cloud Computing, including:
+CloudWeaver demonstrates practical concepts from **Cloud Computing**, including:
 
 * Multi-cloud environments
-* Cloud resource management
+* Cloud resource planning
 * Cloud service comparison
-* Workload planning
-* Cost optimization
+* Workload management
 * Cloud migration
-* Cloud-based application architecture
-* API-based communication
-* Data persistence
-* Scalable cloud infrastructure concepts
+* Containerization concepts
+* Deployment planning
+* API-based application architecture
+* Cloud infrastructure decision support
+* Data persistence and history management
 
 ---
 
-## 🌍 Sustainable Development Goal
+# 🌍 Sustainable Development Goal
 
-### SDG 9 – Industry, Innovation and Infrastructure
+## SDG 9 — Industry, Innovation and Infrastructure
 
-CloudWeaver is aligned primarily with **SDG 9**, as it focuses on modern digital infrastructure, cloud computing, technology-driven decision making, and efficient utilization of computing resources.
+CloudWeaver is primarily aligned with **SDG 9**, which focuses on resilient infrastructure, innovation, and sustainable technological development.
+
+The project explores intelligent planning and efficient decision-making for modern cloud infrastructure.
 
 ---
 
-## 🔮 Future Enhancements
+# 🔮 Future Enhancements
 
-Future versions of CloudWeaver can include:
+The following features can be incorporated in future versions:
 
-* Real-time cloud pricing API integration
-* Live AWS, Azure and GCP service information
+* Real-time AWS, Azure, and GCP pricing APIs
+* Live cloud service and instance information
 * Machine-learning-based workload recommendations
-* More advanced cost optimization
-* Carbon-footprint comparison between cloud providers
-* Automated infrastructure provisioning
+* Advanced cloud cost optimization
+* Carbon-footprint comparison
+* Multi-region latency analysis
+* Automated cloud provisioning
 * Terraform integration
 * Kubernetes workload analysis
-* Cloud monitoring integration
+* Cloud monitoring
 * Advanced migration cost estimation
-* Multi-region latency analysis
-* User authentication and role-based access
+* Role-based authentication
 * Advanced analytics and reporting
 
 ---
 
-## ▶️ Running the Project Locally
+# 🧪 Project Status
 
-### 1. Clone the repository
+| Component                     | Status                |
+| ----------------------------- | --------------------- |
+| CloudWeaver Dashboard         | ✅ Implemented         |
+| Workload Planning Interface   | ✅ Implemented         |
+| Multi-Cloud Planning          | ✅ Implemented         |
+| Migration Planner             | ✅ Implemented         |
+| Four-Stage Migration Workflow | ✅ Implemented         |
+| Migration Checklist           | ✅ Implemented         |
+| Migration Result              | ✅ Implemented         |
+| Workload History              | ✅ Implemented         |
+| Rename History Records        | ✅ Implemented         |
+| Delete History Records        | ✅ Implemented         |
+| Application Testing           | ✅ Implemented         |
+| Advanced Live Cloud Pricing   | 🔮 Future Enhancement |
+| Real-Time Provider APIs       | 🔮 Future Enhancement |
+| ML-Based Recommendation       | 🔮 Future Enhancement |
+| Automated Cloud Provisioning  | 🔮 Future Enhancement |
+
+---
+
+# ▶️ Running the Project
+
+Clone the repository:
 
 ```bash
-git clone <YOUR-GITHUB-REPOSITORY-URL>
+git clone https://github.com/Srinithigk26/CloudWeaver.git
 ```
 
-### 2. Open the project
+Open the project:
 
 ```bash
-cd CloudWeaver-Multi-Cloud-Planner
+cd CloudWeaver
 ```
 
-### 3. Open in Visual Studio Code
+Then open the project in Visual Studio Code:
 
 ```bash
 code .
 ```
 
-### 4. Install dependencies
+The project contains separate `frontend` and `backend` components. Install the dependencies according to the package/dependency files contained in those directories and start the respective development servers.
 
-Use the package manager and dependency instructions provided by the project's frontend/backend configuration.
-
-For example, if the frontend contains a `package.json`:
-
-```bash
-npm install
-```
-
-Then start the development server using the project's configured command, such as:
-
-```bash
-npm start
-```
-
-> The exact commands should be updated according to the final generated project structure.
+> **Note:** The exact start commands depend on the dependency configuration of the current repository version.
 
 ---
 
-## 🌐 Live Application
+# 📸 Screenshots
 
-**CloudWeaver Live Demo:**
+Screenshots of the CloudWeaver dashboard, migration planner, workload history, and migration result can be added here.
 
+Example:
+
+```text
+docs/
+└── screenshots/
+    ├── dashboard.png
+    ├── migration-planner.png
+    ├── migration-result.png
+    └── workload-history.png
+```
+
+---
+
+# 🌐 Live Demo
+
+**CloudWeaver:**
 https://multi-cloud-planner.emergent.host
 
 ---
 
-## 📊 Current Development Status
+# 👩‍💻 Project Information
 
-| Component                   | Status                |
-| --------------------------- | --------------------- |
-| CloudWeaver Dashboard       | ✅ Implemented         |
-| Workload Planning Interface | ✅ Implemented         |
-| Multi-Cloud Concept         | ✅ Implemented         |
-| Migration Planner           | ✅ Implemented         |
-| Migration Checklist         | ✅ Implemented         |
-| Migration Result            | ✅ Implemented         |
-| Workload History            | ✅ Implemented         |
-| Rename / Delete History     | ✅ Implemented         |
-| Backend API Integration     | 🔄 Development        |
-| Advanced Cost Engine        | 🔄 Development        |
-| Recommendation Engine       | 🔄 Development        |
-| Persistent Cloud Storage    | 🔄 Development        |
-| Live Cloud Pricing APIs     | 🔮 Future Enhancement |
-
----
-
-## 👩‍💻 Project
-
-**Project:** CloudWeaver – Intelligent Multi-Cloud Workload Planner
+**Project Name:** CloudWeaver
 **Domain:** Cloud Computing
+**Category:** Multi-Cloud Workload Planning & Migration
 **Primary SDG:** SDG 9 – Industry, Innovation and Infrastructure
-**Development Platform:** Emergent + Visual Studio Code
-**Repository:** GitHub
+**Development:** Emergent + Visual Studio Code
+**Version Control:** Git & GitHub
 
 ---
 
@@ -522,7 +518,10 @@ This project is developed for academic and educational purposes.
 
 ---
 
-### ⭐ CloudWeaver
+<div align="center">
 
-> **Plan workloads. Compare clouds. Optimize deployment decisions.**
+### ☁️ CloudWeaver
 
+**Plan workloads • Compare clouds • Simplify migration decisions**
+
+</div>
