@@ -66,7 +66,7 @@ function Planner() {
   const pct = Math.round((completed / totalTasks) * 100);
   const allComplete = completed === totalTasks;
   const showSummary = activeStep === 3 || allComplete;
-  const resetChecklist = () => setDone({});
+  const resetChecklist = () => { setDone({}); setActiveStep(0); };
   return <div className="page-content"><header className="page-header"><div><span className="eyebrow">WORKSPACE / MIGRATION</span><h1>Move with confidence.</h1><p>The Migration Planner is a reversible, 4-stage playbook that walks a workload from one cloud to another — audit, package, deploy, cutover — with a checklist you can tick off and a readiness tracker.</p></div></header>
     <section className="planner-hero" data-testid="planner-hero">
       <div className="planner-hero-text"><div className="planner-kicker"><Map size={17} /> Migration planner</div><h2>From first image to final switchover.</h2><p>Pick where you're coming from and where you're going. Click a stage to open its checklist.</p></div>
