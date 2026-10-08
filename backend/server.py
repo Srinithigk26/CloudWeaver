@@ -131,6 +131,26 @@ async def workloads(user=Depends(current_user)):
     docs = await db.workloads.find({"user_id": str(user["_id"])}).sort("created_at", -1).to_list(50)
     return [{"id": str(d["_id"]), "created_at": d["created_at"], "workload": d["workload"], "analysis": d["analysis"]} for d in docs]
 
+class WorkloadRename(BaseModel):
+    name: str = Field(min_length=2, max_length=100)
+
+@api.patch("/workloads/{workload_id}")
+async def rename_workload(workload_id: str, data: WorkloadRename, user=Depends(current_user)):
+    try: oid = ObjectId(workload_id)
+    except Exception: raise HTTPException(400, "Invalid workload id")
+    result = await db.workloads.update_one({"_id": oid, "user_id": str(user["_id"])}, {"$set": {"workload.name": data.name.strip()}})
+    if result.matched_count == 0: raise HTTPException(404, "Saved analysis not found")
+    doc = await db.workloads.find_one({"_id": oid})
+    return {"id": str(doc["_id"]), "created_at": doc["created_at"], "workload": doc["workload"], "analysis": doc["analysis"]}
+
+@api.delete("/workloads/{workload_id}")
+async def delete_workload(workload_id: str, user=Depends(current_user)):
+    try: oid = ObjectId(workload_id)
+    except Exception: raise HTTPException(400, "Invalid workload id")
+    result = await db.workloads.delete_one({"_id": oid, "user_id": str(user["_id"])})
+    if result.deleted_count == 0: raise HTTPException(404, "Saved analysis not found")
+    return {"ok": True, "id": workload_id}
+
 @api.post("/assistant/chat")
 async def assistant(data: ChatInput, user=Depends(current_user)):
     try:

@@ -147,11 +147,64 @@ nav button.active{box-shadow:inset 3px 0 0 #a7f3d0}
 .planner-tasks li{background:#f8fbff;border:1.5px solid #e4ecf5;border-radius:10px;transition:background-color .2s,border-color .2s}
 .planner-tasks li:hover{border-color:#9ec4ec}
 .planner-tasks li.done{background:#eefaef;border-color:#bde2c1}
-.planner-tasks li.done span{text-decoration:line-through;color:#5d8464}
+.planner-tasks li.done span{color:#1b5e20;font-weight:600}
 .planner-tasks label{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;cursor:pointer;font-size:13px;color:#0b1f3a;font-weight:500;line-height:1.5}
 .planner-tasks input[type=checkbox]{appearance:none;-webkit-appearance:none;width:19px;height:19px;border:2px solid #c2d2e2;border-radius:5px;flex-shrink:0;margin-top:1px;background:#fff;cursor:pointer;position:relative;transition:background-color .2s,border-color .2s}
 .planner-tasks input[type=checkbox]:checked{background:#2e7d32;border-color:#2e7d32}
 .planner-tasks input[type=checkbox]:checked:after{content:"";position:absolute;left:4px;top:0;width:7px;height:12px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}
+
+/* Previous button accent */
+.planner-nav .planner-prev{background:#eef5fb;border-color:#cfe1f5;color:#1259a5}
+.planner-nav .planner-prev:hover:not(:disabled){background:#dceaf8;color:#0b4a8a}
+
+/* Migration summary & pattern expansion */
+.planner-summary{margin-top:18px;padding:26px 28px}
+.summary-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:20px}
+.summary-head h2{font-family:var(--display);font-size:22px;font-weight:800;letter-spacing:-.5px;margin:8px 0 6px;color:#0b1f3a}
+.summary-head .muted{margin-top:0;color:#5d7489;font-size:13px}
+.summary-head b{color:#0b1f3a;font-weight:700}
+.summary-badge{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#2e7d32,#1b5e20);color:#fff;font-family:var(--display);font-size:11px;font-weight:800;letter-spacing:.6px;padding:7px 11px;border-radius:999px}
+.summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.summary-card{background:#f8fbff;border:1.5px solid #e4ecf5;border-radius:11px;padding:16px 16px 14px}
+.summary-card.complete{background:#eefaef;border-color:#bde2c1}
+.summary-card-head{display:flex;align-items:center;gap:9px;font-family:var(--display);font-size:12.5px;font-weight:700;color:#0b1f3a;margin-bottom:10px}
+.summary-card-head b{flex:1;min-width:0}
+.summary-num{font-family:var(--display);font-weight:800;font-size:10px;background:linear-gradient(135deg,#1e88e5,#2e7d32);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:1.5px}
+.summary-count{font-size:10px;font-weight:700;color:#1259a5;background:#eaf3ff;padding:3px 7px;border-radius:999px}
+.summary-card.complete .summary-count{background:#2e7d32;color:#fff}
+.summary-card ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.summary-card li{display:flex;align-items:flex-start;gap:7px;font-size:11.5px;color:#334e68;line-height:1.5}
+.summary-card li svg{color:#2e7d32;flex:none;margin-top:2px}
+.summary-empty{font-size:11.5px;color:#8aa1b5;margin:0}
+.summary-pattern{margin-top:20px;background:linear-gradient(140deg,#0b1f3a 0%,#1b3a66 100%);color:#e5edf7;border-radius:12px;padding:24px 26px;display:flex;justify-content:space-between;gap:24px;align-items:flex-end;flex-wrap:wrap}
+.summary-pattern h3{font-family:var(--display);font-weight:700;font-size:18px;margin:9px 0 12px;color:#fff}
+.summary-pattern .eyebrow{background:rgba(154,220,170,.14);border-color:rgba(154,220,170,.3);color:#9bdfa6}
+.summary-pattern .eyebrow:before{background:#9bdfa6;box-shadow:0 0 0 3px rgba(154,220,170,.14)}
+.summary-pattern ol{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:7px;font-size:12.5px;line-height:1.6;color:#c6d4e5;max-width:720px}
+.summary-pattern ol b{color:#fff}
+.summary-pattern .planner-reset{background:linear-gradient(135deg,#2e7d32,#1b5e20);font-family:var(--display);font-weight:700;letter-spacing:.3px;padding:11px 16px;border-radius:9px}
+
+@media(max-width:900px){.summary-grid{grid-template-columns:1fr 1fr}.summary-pattern{flex-direction:column;align-items:stretch}.summary-pattern .planner-reset{width:100%}}
+@media(max-width:480px){.summary-grid{grid-template-columns:1fr}.planner-summary{padding:20px}}
+
+/* Workload history row actions */
+.history-row{position:relative}
+.history-actions{display:flex;gap:6px;margin-left:12px}
+.icon-action{width:34px;height:34px;border-radius:8px;border:1.5px solid var(--line);background:#fff;color:#64748b;display:grid;place-items:center;transition:background-color .2s,border-color .2s,color .2s,transform .2s;cursor:pointer}
+.icon-action:hover{transform:translateY(-1px)}
+.icon-action.rename:hover{border-color:#1e88e5;color:#1259a5;background:#eef5fb}
+.icon-action.delete:hover{border-color:#dc2626;color:#dc2626;background:#fef2f2}
+.icon-action:disabled{opacity:.4;cursor:not-allowed}
+
+.history-rename{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.history-rename input{flex:1;min-width:140px;border:1.5px solid #cfe1f5;background:#f8fbff;border-radius:7px;padding:9px 11px;font-size:13px;color:#0b1f3a;font-weight:600;outline:0;font-family:inherit}
+.history-rename input:focus{border-color:#1e88e5;box-shadow:0 0 0 3px rgba(30,136,229,.14);background:#fff}
+.history-save,.history-cancel{border:0;background:#2e7d32;color:#fff;border-radius:7px;padding:8px 12px;font-family:var(--display);font-weight:700;font-size:11.5px;cursor:pointer;transition:background-color .2s}
+.history-save:hover{background:#1b5e20}
+.history-cancel{background:#eef2f7;color:#334e68}
+.history-cancel:hover{background:#dde6ef}
+
+@media(max-width:800px){.history-actions{margin-left:50px;margin-top:8px}}
 
 @media(max-width:1100px){.workflow{grid-template-columns:1fr 1fr;gap:12px}.workflow-arrow{display:none}}
 @media(max-width:900px){.planner-hero{padding:24px 22px}.planner-controls{width:100%;justify-content:center}.planner-controls select{min-width:0;flex:1}.planner-detail{padding:20px}.planner-detail-head{flex-direction:column;align-items:stretch}.planner-nav{justify-content:space-between}.planner-nav button{flex:1;justify-content:center}}
